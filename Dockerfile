@@ -28,6 +28,9 @@ ENV PYTHONUNBUFFERED=1
 # Copy application code and model artifacts
 COPY . .
 
+# Models container build ke dauraan automatically download honge
+RUN python download_models.py
+
 # Render exposes PORT env variable dynamically (usually 10000)
 ENV PORT=10000
 EXPOSE 10000
